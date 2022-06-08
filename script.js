@@ -1,54 +1,46 @@
-const boom = new Audio('./Drumkit_Sounds-master/boom.wav');
-const clap = new Audio('./Drumkit_Sounds-master/clap.wav');
-const hihat = new Audio('./Drumkit_Sounds-master/hihat.wav');
-const kick = new Audio('./Drumkit_Sounds-master/kick.wav');
-const openhat = new Audio('./Drumkit_Sounds-master/openhat.wav');
-const ride = new Audio('./Drumkit_Sounds-master/ride.wav');
-const snare = new Audio('./Drumkit_Sounds-master/snare.wav');
-const tink = new Audio('./Drumkit_Sounds-master/tink.wav');
-const tom = new Audio('./Drumkit_Sounds-master/tom.wav');
+const drumSounds = [
+    boom = new Audio('./Drumkit_Sounds-master/boom.wav'),
+    clap = new Audio('./Drumkit_Sounds-master/clap.wav'),
+    hihat = new Audio('./Drumkit_Sounds-master/hihat.wav'),
+    kick = new Audio('./Drumkit_Sounds-master/kick.wav'),
+    openhat = new Audio('./Drumkit_Sounds-master/openhat.wav'),
+    ride = new Audio('./Drumkit_Sounds-master/ride.wav'),
+    snare = new Audio('./Drumkit_Sounds-master/snare.wav'),
+    tink = new Audio('./Drumkit_Sounds-master/tink.wav'),
+    tom = new Audio('./Drumkit_Sounds-master/tom.wav')
+]
 
-function playBoom()
+let recordBool = 0;
+const recordedDrums = [];
+
+function recordSwitch()
 {
-    boom.play();
+    if(recordBool)
+    {
+        recordBool = 0;
+        console.log("Stopped recording");
+    } else
+    {
+        recordBool = 1;
+        console.log("Started recording");
+    }
 }
 
-function playClap()
+function record()
 {
-    clap.play();
+    if(recordBool)
+    {
+        document.getElementById('btnBoom').onclick = recordedDrums.push(drumSounds[0]);
+    }
 }
 
-function playHihat()
+function play()
 {
-    hihat.play();
-}
-
-function playKick()
-{
-    kick.play();
-}
-
-function playOpenhat()
-{
-    openhat.play();
-}
-
-function playRide()
-{
-    ride.play();
-}
-
-function playSnare()
-{
-    snare.play();
-}
-
-function playTink()
-{
-    tink.play();
-}
-
-function playTom()
-{
-    tom.play();
+    let recordedDrumsLength = recordedDrums.length;
+    for(let i = 0; i < recordedDrumsLength; i++)
+    {
+        recordedDrums[i].play();
+        console.log("test");
+    }
+    console.log(recordedDrums.length);
 }

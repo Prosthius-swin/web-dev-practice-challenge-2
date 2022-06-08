@@ -12,54 +12,73 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col">
-                    <button onclick="playBoom();" id="btnBoom" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[0].play();record();" id="btnBoom" type="button" class="btn btn-primary">
                         Boom
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playClap();" id="btnClap" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[1].play();" id="btnClap" type="button" class="btn btn-primary">
                         Clap
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playHihat();" id="btnHihat" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[2].play();" id="btnHihat" type="button" class="btn btn-primary">
                         Hihat
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playKick();" id="btnKick" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[3].play();" id="btnKick" type="button" class="btn btn-primary">
                         Kick
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playOpenhat();" id="btnOpenhat" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[4].play();" id="btnOpenhat" type="button" class="btn btn-primary">
                         Openhat
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playRide();" id="btnRide" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[5].play();" id="btnRide" type="button" class="btn btn-primary">
                         Ride
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playSnare();" id="btnSnare" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[6].play();" id="btnSnare" type="button" class="btn btn-primary">
                         Snare
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playTink();" id="btnTink" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[7].play();" id="btnTink" type="button" class="btn btn-primary">
                         Tink
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="playTom();" id="btnTom" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[8].play();" id="btnTom" type="button" class="btn btn-primary">
                         Tom
                     </button>
                 </div>
             </div>
-
+            <div class="row mt-5">
+                <div class="col">
+                    <button onclick="recordSwitch();" type="button" class="btn btn-primary">
+                        Record
+                    </button>
+                    <button onclick="stopRecord();" type="button" class="btn btn-primary">
+                        Stop Record
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <button onclick="play();" type="button" class="btn btn-primary">
+                        Play
+                    </button>
+                    <button onclick="stopPlay();" type="button" class="btn btn-primary">
+                        Stop Play
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
