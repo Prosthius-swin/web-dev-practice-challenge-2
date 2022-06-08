@@ -13,6 +13,18 @@ const drumSounds = [
 let recordBool = 0;
 const recordedDrums = [];
 
+function record()
+{
+    if(recordBool)
+    {
+        document.getElementById('btnBoom').onclick = recordedDrums.push(drumSounds[0]);
+    } else
+    {
+        console.log('Recording off')
+    }
+    console.log(recordBool);
+}
+
 function recordSwitch()
 {
     if(recordBool)
@@ -23,14 +35,6 @@ function recordSwitch()
     {
         recordBool = 1;
         console.log("Started recording");
-    }
-}
-
-function record()
-{
-    if(recordBool)
-    {
-        document.getElementById('btnBoom').onclick = recordedDrums.push(drumSounds[0]);
     }
 }
 
