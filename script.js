@@ -124,35 +124,35 @@ function playSound()
             cloned0.play();
             break;
         case 'btnClap':
-            cloned1 = drumSounds[1].cloneNode();
+            const cloned1 = drumSounds[1].cloneNode();
             cloned1.play();
             break;
         case 'btnHihat':
-            cloned2 = drumSounds[2].cloneNode();
+            const cloned2 = drumSounds[2].cloneNode();
             cloned2.play();
             break;
         case 'btnKick':
-            cloned3 = drumSounds[3].cloneNode();
+            const cloned3 = drumSounds[3].cloneNode();
             cloned3.play();
             break;
         case 'btnOpenhat':
-            cloned4 = drumSounds[4].cloneNode();
+            const cloned4 = drumSounds[4].cloneNode();
             cloned4.play();
             break;
         case 'btnRide':
-            cloned5 = drumSounds[5].cloneNode();
+            const cloned5 = drumSounds[5].cloneNode();
             cloned5.play();
             break;
         case 'btnSnare':
-            cloned6 = drumSounds[6].cloneNode();
+            const cloned6 = drumSounds[6].cloneNode();
             cloned6.play();
             break;
         case 'btnTink':
-            cloned7 = drumSounds[7].cloneNode();
+            const cloned7 = drumSounds[7].cloneNode();
             cloned7.play();
             break;  
         case 'btnTom':
-            cloned8 = drumSounds[8].cloneNode();
+            const cloned8 = drumSounds[8].cloneNode();
             cloned8.play();
             break;
     } 
