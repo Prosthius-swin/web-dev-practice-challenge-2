@@ -11,6 +11,7 @@ const drumSounds = [
 ]
 
 let counter = 0;
+let playSoundCounter = 0;
 let playRecordedLoop;
 let pressedBtnID;
 let recordBool = 0;
@@ -29,31 +30,31 @@ function record()
         switch(pressedBtnID)
         {
             case 'btnBoom':
-                recordedDrums.push(drumSounds[0]);
+                recordedDrums.push(drumSounds[0].cloneNode());
                 break;
             case 'btnClap':
-                recordedDrums.push(drumSounds[1]);
+                recordedDrums.push(drumSounds[1].cloneNode());
                 break;
             case 'btnHihat':
-                recordedDrums.push(drumSounds[2]);
+                recordedDrums.push(drumSounds[2].cloneNode());
                 break;
             case 'btnKick':
-                recordedDrums.push(drumSounds[3]);
+                recordedDrums.push(drumSounds[3].cloneNode());
                 break;
             case 'btnOpenhat':
-                recordedDrums.push(drumSounds[4]);
+                recordedDrums.push(drumSounds[4].cloneNode());
                 break;
             case 'btnRide':
-                recordedDrums.push(drumSounds[5]);
+                recordedDrums.push(drumSounds[5].cloneNode());
                 break;
             case 'btnSnare':
-                recordedDrums.push(drumSounds[6]);
+                recordedDrums.push(drumSounds[6].cloneNode());
                 break;
             case 'btnTink':
-                recordedDrums.push(drumSounds[7]);
+                recordedDrums.push(drumSounds[7].cloneNode());
                 break;  
             case 'btnTom':
-                recordedDrums.push(drumSounds[8]);
+                recordedDrums.push(drumSounds[8].cloneNode());
                 break;
         }   
     } else
@@ -77,14 +78,13 @@ function recordStop()
 function playRecordedDrums()
 {
     let recordedDrumsLength = recordedDrums.length;
-
-    recordedDrums[counter].load();
     recordedDrums[counter].play();
     counter++;
-    if(counter >= recordedDrumsLength)
+    if(counter === recordedDrumsLength)
     {
         counter = 0;
     }
+    
 }
 
 function speedUp()
@@ -119,7 +119,7 @@ function playSound()
 {
     switch(pressedBtnID)
     {
-        case 'btnBoom':
+        case 'btnBoom':            
             const cloned0 = drumSounds[0].cloneNode();
             cloned0.play();
             break;
@@ -156,9 +156,4 @@ function playSound()
             cloned8.play();
             break;
     } 
-}
-
-for(let i = 0; i <= 8; i++)
-{
-    var cloned = drumSounds[i].cloneNode();
 }
