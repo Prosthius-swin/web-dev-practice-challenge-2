@@ -14,68 +14,78 @@
         <div class="container-fluid">
             <div class="row mt-3">
                 <div class="col">
-                    <button onclick="record();drumSounds[0].play();" id="btnBoom" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[0].play();pressedButton(this.id);record();" id="btnBoom" type="button" class="btn btn-primary">
                         Boom
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[1].play();" id="btnClap" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[1].play();pressedButton(this.id);record();" id="btnClap" type="button" class="btn btn-primary">
                         Clap
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[2].play();" id="btnHihat" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[2].play();pressedButton(this.id);record();" id="btnHihat" type="button" class="btn btn-primary">
                         Hihat
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[3].play();" id="btnKick" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[3].play();pressedButton(this.id);record();" id="btnKick" type="button" class="btn btn-primary">
                         Kick
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[4].play();" id="btnOpenhat" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[4].play();pressedButton(this.id);record();" id="btnOpenhat" type="button" class="btn btn-primary">
                         Openhat
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[5].play();" id="btnRide" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[5].play();pressedButton(this.id);record();" id="btnRide" type="button" class="btn btn-primary">
                         Ride
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[6].play();" id="btnSnare" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[6].play();pressedButton(this.id);record();" id="btnSnare" type="button" class="btn btn-primary">
                         Snare
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[7].play();" id="btnTink" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[7].play();pressedButton(this.id);record();" id="btnTink" type="button" class="btn btn-primary">
                         Tink
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="drumSounds[8].play();" id="btnTom" type="button" class="btn btn-primary">
+                    <button onclick="drumSounds[8].play();pressedButton(this.id);record();" id="btnTom" type="button" class="btn btn-primary">
                         Tom
                     </button>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col">
-                    <button onclick="recordSwitch();" type="button" class="btn btn-primary">
-                        Record
+                    <button onclick="recordStart();" type="button" class="btn btn-primary">
+                        Start Recording
                     </button>
-                    <button onclick="stopRecord();" type="button" class="btn btn-primary">
-                        Stop Record
+                    <button onclick="recordStop();" type="button" class="btn btn-primary">
+                        Stop Recording
                     </button>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col">
-                    <button onclick="play();" type="button" class="btn btn-primary">
+                    <button onclick="playLoop();" type="button" class="btn btn-primary">
                         Play
                     </button>
                     <button onclick="stopPlay();" type="button" class="btn btn-primary">
                         Stop Play
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <button onclick="speedUp();" type="button" class="btn btn-primary">
+                        Speed up
+                    </button>
+                    <button onclick="slowDown();" type="button" class="btn btn-primary">
+                        Slow down
                     </button>
                 </div>
             </div>

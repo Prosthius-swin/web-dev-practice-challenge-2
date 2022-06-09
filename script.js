@@ -10,41 +10,106 @@ const drumSounds = [
     tom = new Audio('./Drumkit_Sounds-master/tom.wav')
 ]
 
+let counter = 0;
+let playRecordedLoop;
+let pressedBtnID;
 let recordBool = 0;
 const recordedDrums = [];
+let playInterval = 500;
+
+let playLoop = () => playRecordedLoop = setInterval(playRecordedDrums, playInterval);
+let stopPlay = () => clearInterval(playRecordedLoop);
+let pressedButton = (pressed) => pressedBtnID = pressed;
+let intervalCheck = () => playInterval; 
 
 function record()
 {
     if(recordBool)
     {
-        document.getElementById('btnBoom').onclick = recordedDrums.push(drumSounds[0]);
+        switch(pressedBtnID)
+        {
+            case 'btnBoom':
+                recordedDrums.push(drumSounds[0]);
+            break;
+            case 'btnClap':
+                recordedDrums.push(drumSounds[1]);
+            break;
+            case 'btnHihat':
+                recordedDrums.push(drumSounds[2]);
+            break;
+            case 'btnKick':
+                recordedDrums.push(drumSounds[3]);
+            break;
+            case 'btnOpenhat':
+                recordedDrums.push(drumSounds[4]);
+            break;
+            case 'btnRide':
+                recordedDrums.push(drumSounds[5]);
+            break;
+            case 'btnSnare':
+                recordedDrums.push(drumSounds[6]);
+            break;
+            case 'btnTink':
+                recordedDrums.push(drumSounds[7]);
+            break;  
+            case 'btnTom':
+                recordedDrums.push(drumSounds[8]);
+            break;
+        }   
     } else
     {
-        console.log('Recording off')
+        console.log('Recording off');
     }
-    console.log(recordBool);
 }
 
-function recordSwitch()
+function recordStart()
 {
-    if(recordBool)
-    {
-        recordBool = 0;
-        console.log("Stopped recording");
-    } else
-    {
-        recordBool = 1;
-        console.log("Started recording");
-    }
+    recordBool = 1;
+    console.log('Recording started')
 }
 
-function play()
+function recordStop()
+{
+    recordBool = 0;
+    console.log('Recording stopped')
+}
+
+function playRecordedDrums()
 {
     let recordedDrumsLength = recordedDrums.length;
-    for(let i = 0; i < recordedDrumsLength; i++)
+
+    recordedDrums[counter].play();
+    counter++;
+    if(counter >= recordedDrumsLength)
     {
-        recordedDrums[i].play();
-        console.log("test");
+        counter = 0;
     }
-    console.log(recordedDrums.length);
+}
+
+function speedUp()
+{
+    if(playInterval > 0)
+    {
+        playInterval -= 100;
+    } else
+    {
+        console.log("Can't go any lower")
+    }
+    stopPlay();
+    playLoop();
+    console.log(playInterval);
+}
+
+function slowDown()
+{
+    if(playInterval < 2000)
+    {
+        playInterval += 100;
+    } else
+    {
+        console.log("Can't go any higher")
+    }
+    stopPlay();
+    playLoop();
+    console.log(playInterval);
 }
