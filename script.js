@@ -30,31 +30,31 @@ function record()
         {
             case 'btnBoom':
                 recordedDrums.push(drumSounds[0]);
-            break;
+                break;
             case 'btnClap':
                 recordedDrums.push(drumSounds[1]);
-            break;
+                break;
             case 'btnHihat':
                 recordedDrums.push(drumSounds[2]);
-            break;
+                break;
             case 'btnKick':
                 recordedDrums.push(drumSounds[3]);
-            break;
+                break;
             case 'btnOpenhat':
                 recordedDrums.push(drumSounds[4]);
-            break;
+                break;
             case 'btnRide':
                 recordedDrums.push(drumSounds[5]);
-            break;
+                break;
             case 'btnSnare':
                 recordedDrums.push(drumSounds[6]);
-            break;
+                break;
             case 'btnTink':
                 recordedDrums.push(drumSounds[7]);
-            break;  
+                break;  
             case 'btnTom':
                 recordedDrums.push(drumSounds[8]);
-            break;
+                break;
         }   
     } else
     {
@@ -78,6 +78,7 @@ function playRecordedDrums()
 {
     let recordedDrumsLength = recordedDrums.length;
 
+    recordedDrums[counter].load();
     recordedDrums[counter].play();
     counter++;
     if(counter >= recordedDrumsLength)
@@ -112,4 +113,52 @@ function slowDown()
     stopPlay();
     playLoop();
     console.log(playInterval);
+}
+
+function playSound()
+{
+    switch(pressedBtnID)
+    {
+        case 'btnBoom':
+            const cloned0 = drumSounds[0].cloneNode();
+            cloned0.play();
+            break;
+        case 'btnClap':
+            cloned1 = drumSounds[1].cloneNode();
+            cloned1.play();
+            break;
+        case 'btnHihat':
+            cloned2 = drumSounds[2].cloneNode();
+            cloned2.play();
+            break;
+        case 'btnKick':
+            cloned3 = drumSounds[3].cloneNode();
+            cloned3.play();
+            break;
+        case 'btnOpenhat':
+            cloned4 = drumSounds[4].cloneNode();
+            cloned4.play();
+            break;
+        case 'btnRide':
+            cloned5 = drumSounds[5].cloneNode();
+            cloned5.play();
+            break;
+        case 'btnSnare':
+            cloned6 = drumSounds[6].cloneNode();
+            cloned6.play();
+            break;
+        case 'btnTink':
+            cloned7 = drumSounds[7].cloneNode();
+            cloned7.play();
+            break;  
+        case 'btnTom':
+            cloned8 = drumSounds[8].cloneNode();
+            cloned8.play();
+            break;
+    } 
+}
+
+for(let i = 0; i <= 8; i++)
+{
+    var cloned = drumSounds[i].cloneNode();
 }
